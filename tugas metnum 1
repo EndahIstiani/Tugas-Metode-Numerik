@@ -1,0 +1,96 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <math.h>
+#include <string.h>
+
+int main() {
+	//kamus
+	int A, x;
+	int B;
+	int hasil;
+	char lanjut[1];
+	int pilih;
+	
+	//algoritma
+	Menu :
+		printf("\n\n====== Program Perhitungan A dan B ======\n\n");
+		printf("1. Perhitungan A + B \n");
+		printf("2. Perhitungan A - B \n");
+		printf("3. Perhitungan A * B \n");
+		printf("4. Perhitungan A ^ B \n");
+		printf("5. Perhitungan f(x)=3x^ + x - 1 \n");
+		printf("6. Keluar \n");
+		printf("Pilih menu : ");scanf("%d", &pilih);
+		
+	switch(pilih){
+		case 1 : system("cls");
+			printf("Masukan nilai A : ");scanf("%d", &A);
+			printf("Masukan nilai B : ");scanf("%d", &B);
+			hasil = A + B;
+			printf("Hasil = %d \n", hasil);
+			printf("Ingin lanjut[y/n]? ");scanf("%s", lanjut);
+			if(strcmp(lanjut,"y") == 0){
+				goto Menu;
+			}else if(strcmp(lanjut,"n") == 0){
+				goto Keluar;
+			}
+			break;
+		case 2 : system("cls");
+			printf("Masukan nilai A : ");scanf("%d", &A);
+			printf("Masukan nilai B : ");scanf("%d", &B);
+			hasil = A - B;
+			printf("Hasil = %d \n", hasil);
+			printf("Ingin lanjut[y/n]? ");scanf("%s", lanjut);
+			if(strcmp(lanjut,"y") == 0){
+				goto Menu;
+			}else if(strcmp(lanjut,"n") == 0){
+				goto Keluar;
+			}
+			break;
+		case 3 : system("cls");
+			printf("Masukan nilai A : ");scanf("%d", &A);
+			printf("Masukan nilai B : ");scanf("%d", &B);
+			hasil = A * B;
+			printf("Hasil = %d \n", hasil);
+			printf("Ingin lanjut[y/n]? ");scanf("%s", lanjut);
+			if(strcmp(lanjut,"y") == 0){
+				goto Menu;
+			}else if(strcmp(lanjut,"n") == 0){
+				goto Keluar;
+			}
+			break;
+		case 4 : system("cls");
+			printf("Masukan nilai A : ");scanf("%d", &A);
+			printf("Masukan nilai B : ");scanf("%d", &B);
+			hasil = pow(A,B);
+			printf("Hasil = %d \n", hasil);
+			printf("Ingin lanjut[y/n]? ");scanf("%s", lanjut);
+			if(strcmp(lanjut,"y") == 0){
+				goto Menu;
+			}else if(strcmp(lanjut,"n") == 0){
+				goto Keluar;
+			}
+			break;
+		case 5 : system("cls");
+			printf("Masukan nilai A : ");scanf("%d", &A);
+			printf("Masukan nilai B : ");scanf("%d", &B);
+			for(x=A;x<=B;x++){
+				hasil = (3*(x*x)) + x - 1;
+				printf("Hasil = %d \n", hasil);
+			}
+			printf("Ingin lanjut[y/n]? ");scanf("%s", lanjut);
+			if(strcmp(lanjut,"y") == 0){
+				goto Menu;
+			}else if(strcmp(lanjut,"n") == 0){
+				goto Keluar;
+			}
+			break;
+		case 6 : Keluar :
+			printf("Terimakasih ...");
+		break;
+		default : printf("Menu tidak terdaftar");
+	}
+getch();
+return 0;
+}
